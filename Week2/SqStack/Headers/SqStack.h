@@ -1,6 +1,7 @@
 #ifndef STACK_H_INCLUDED
 #define STACK_H_INCLUDED
 
+#define MAXSIZE 100 
 typedef enum Status 
 {
 	ERROR = 0, SUCCESS = 1
@@ -10,9 +11,8 @@ typedef int ElemType;
 
 typedef struct SqStack 
 {
-	int *elem;
-	int top;
-	int size;
+	int  arry[MAXSIZE];
+	int   top;			
 } SqStack;
 
 
@@ -26,5 +26,8 @@ Status stackLength(SqStack *s,int *length);//检测栈长度
 Status pushStack(SqStack *s,ElemType data);//入栈
 Status popStack(SqStack *s,ElemType *data);//出栈
 
+//操作界面 
+void menu();/*选择菜单界面*/ 
+void sign();/*输入栏*/ 
 
 #endif 
